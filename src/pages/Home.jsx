@@ -9,7 +9,8 @@ function Home() {
       <div className='home-content'>
         <h1 className='home-title'>Pokemon Guesser</h1>
         <p className='home-subtitle'>
-          Think anyone out of <span className='home-number'>1100+ Pokemon</span>
+          Think anyone out of
+          <span className='home-number'> 1100+ Pokemon</span>
           <br></br>
           We'll guess what it is!
         </p>
