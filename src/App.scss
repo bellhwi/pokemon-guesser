@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300&display=swap');
+$font-header: 'Lato', sans-serif;
+$font-content: 'Roboto', sans-serif;
+$color-highlight: #ffc300;
+$color-content: #eee;
+
+@mixin bg-image($url, $brightness) {
+  background: url($url) center/cover no-repeat;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  filter: brightness($brightness);
+}
+
+@mixin content-image($url, $size) {
+  background: url($url) center/cover no-repeat;
+  width: $size;
+  height: $size;
+  position: absolute;
+  left: 25%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin title($font-size, $letter-spacing) {
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  color: #fff;
+}
+
+@mixin content($left) {
+  position: absolute;
+  left: $left;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-content;
+  letter-spacing: 1px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-header;
+}
+
+input[type='radio'] {
+  position: relative;
+  bottom: 1px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.alert {
+  display: none;
+  color: $color-highlight;
+  text-align: left;
+  padding-left: 8px;
+}
+
+.alert.alert-on {
+  display: block;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  padding: 14px 28px;
+  color: #fff;
+  background-color: $color-highlight;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  background-color: #eeba0b;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+}
+
+.home-content,
+.notfound-content {
+  @include content(50%);
+}
+
+.home-bg {
+  @include bg-image('../public/bg.webp', 40%);
+}
+
+.home-title,
+.notfound-title {
+  @include title(60px, 3);
+}
+
+.home-subtitle,
+.notfound-subtitle {
+  font-size: 18px;
+  color: $color-content;
+  margin: 40px 0 100px;
+  line-height: 24px;
+}
+
+.home-number {
+  color: $color-highlight;
+}
+
+.main-bg {
+  @include bg-image('../public/bg_alt.webp', 30%);
+}
+.main-content {
+  @include content(65%);
+}
+
+.main-question {
+  @include title(28px, 3);
+}
+
+.main-answer {
+  margin: 32px 0 5px;
+}
+
+.main-img {
+  @include content-image('../public/psyduck.webp', 300px);
+}
+
+.main-pager {
+  margin-top: 100px;
+  text-align: right;
+  color: #fff;
+
+  span {
+    cursor: pointer;
+  }
+}
+
+.main-select {
+  width: 100%;
+  height: 30px;
+  padding: 5px 10px;
+  appearance: none;
+  border: 1px solid $color-highlight;
+  box-shadow: 0 0 10px #eeba0b;
+  border-radius: 2px;
+}
+
+.main-select:active,
+.main-select:focus {
+  outline: none;
+}
+
+.result-bg {
+  @include bg-image('../public/bg_result.webp', 30%);
+}
+
+.result-img {
+  @include content-image('../public/pikachu.webp', 250px);
+  filter: brightness(90%);
+}
+
+.result-content {
+  @include content(65%);
+}
+
+.result-title {
+  @include title(28px, 3);
+}
+
+.result-answer {
+  text-align: center;
+}
+
+.result-pokemon {
+  width: 100%;
+}
+
+.result-name {
+  color: $color-content;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.first-character,
+.last-character {
+  color: $color-highlight;
+}
+
+.letter-input {
+  width: 100%;
+  padding: 5px 10px;
+  appearance: none;
+  border: 1px solid $color-highlight;
+  box-shadow: 0 0 10px #eeba0b;
+  border-radius: 2px;
+  outline: none;
+}
+
+.radio-container {
+  padding: 12px 24px;
+  text-align: left;
+  color: $color-content;
+}
+
+.notfound-bg {
+  @include bg-image('../public/bg_notfound.webp', 40%);
+}

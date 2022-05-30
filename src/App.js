@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import axios from 'axios'
+import Home from './pages/Home'
+import Main from './pages/Main'
+import Result from './pages/Result'
+import NotFound from './pages/NotFound'
+import { useDispatch } from 'react-redux'
+import { setPokemonColor } from './store'
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    axios.get(`https://pokeapi.co/api/v2/pokemon-color`).then((res) => {
+      dispatch(setPokemonColor(res.data.results))
+    })
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/main' element={<Main />} />
+      <Route path='/result' element={<Result />} />
+      <Route path='/notfound' element={<NotFound />} />
+    </Routes>
+  )
 }
 
-export default App;
+export default App
