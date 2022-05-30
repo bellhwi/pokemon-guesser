@@ -5,6 +5,7 @@ import Shape from '../components/Shape'
 import Letter from '../components/Letter'
 import FirstCharacter from '../components/FirstCharacter'
 import LastCharacter from '../components/LastCharacter'
+import Footer from '../components/Footer'
 
 function Main() {
   const [questionCount, setQuestionCount] = useState(0)
@@ -58,6 +59,7 @@ function Main() {
       <div className='main-bg'></div>
       <div className='main-img'></div>
       <div className='main-content'>{components[questionCount]}</div>
+      <Footer />
     </div>
   )
 }

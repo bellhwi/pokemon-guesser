@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import Footer from '../components/Footer'
 
 function Home() {
   const navigate = useNavigate()
@@ -22,6 +23,7 @@ function Home() {
           START
         </button>
       </div>
+      <Footer />
     </div>
   )
 }

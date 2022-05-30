@@ -1,3 +1,5 @@
+import Footer from '../components/Footer'
+
 function NotFound() {
   return (
     <div className='container'>
@@ -13,6 +15,7 @@ function NotFound() {
           <a href='/main'>Try Again</a>
         </button>
       </div>
+      <Footer />
     </div>
   )
 }

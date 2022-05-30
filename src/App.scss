@@ -229,3 +229,31 @@ a {
 .notfound-bg {
   @include bg-image('../public/bg_notfound.webp', 40%);
 }
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+}
+
+.footer .sns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .sns a {
+  margin: 10px;
+  color: #ccc;
+}
+
+.footer .sns a:hover {
+  color: $color-highlight;
+}

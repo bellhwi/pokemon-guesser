@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux'
+import Footer from '../components/Footer'
 
 function Result() {
   const result = useSelector((state) => state.result)
@@ -17,6 +18,7 @@ function Result() {
           <a href='/'>Back To Home</a>
         </button>
       </div>
+      <Footer />
     </div>
   )
 }
