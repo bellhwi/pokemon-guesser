@@ -10,9 +10,8 @@ function Home() {
         <h1 className='home-title'>Pokemon Guesser</h1>
         <p className='home-subtitle'>
           Think anyone out of
-          <span className='home-number'> 1100+ Pokemon</span>
-          <br></br>
-          We'll guess what it is!
+          <span className='home-number'> 1100+ Pokemon</span>,<br></br>
+          we'll guess what it is!
         </p>
         <button
           type='button'

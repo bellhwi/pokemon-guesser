@@ -62,17 +62,15 @@ a {
 
 .container {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .home-content,
 .notfound-content {
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  transform: translate(-50%, -50%);
+  position: relative;
   text-align: center;
+  margin-top: 200px;
 }
 
 .home-bg {
@@ -96,7 +94,7 @@ a {
 .notfound-subtitle {
   font-size: 20px;
   color: #eee;
-  margin: 40px 0 100px;
+  margin: 40px 0 120px;
   line-height: 28px;
 }
 
@@ -115,11 +113,11 @@ a {
 }
 
 .main-content {
-  position: absolute;
-  left: 65%;
-  top: 40%;
-  transform: translate(-50%, -50%);
+  position: relative;
   text-align: center;
+  margin-top: 200px;
+  max-width: 60%;
+  float: left;
 }
 
 .main-question {
@@ -134,12 +132,12 @@ a {
 
 .main-img {
   background: url("../public/psyduck.webp") center/cover no-repeat;
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  left: 25%;
-  top: 40%;
-  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  position: relative;
+  float: left;
+  margin-top: 200px;
+  margin-right: 26px;
 }
 
 .main-pager {
@@ -182,19 +180,19 @@ a {
   background: url("../public/pikachu.webp") center/cover no-repeat;
   width: 250px;
   height: 250px;
-  position: absolute;
-  left: 25%;
-  top: 40%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  float: left;
+  margin-top: 250px;
+  margin-right: 26px;
   filter: brightness(90%);
 }
 
 .result-content {
-  position: absolute;
-  left: 65%;
-  top: 40%;
-  transform: translate(-50%, -50%);
+  position: relative;
   text-align: center;
+  margin-top: 200px;
+  max-width: 65%;
+  float: none;
 }
 
 .result-title {
@@ -251,7 +249,7 @@ a {
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
@@ -284,25 +282,25 @@ a {
     display: none;
   }
 
-  .home-title,
-.notfound-title {
-    font-size: 42px;
-    letter-spacing: 3;
-    color: #fff;
-  }
-
-  .main-content,
-.result-content {
-    position: absolute;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+  .home-subtitle,
+.notfound-subtitle {
+    font-size: 16px;
+    color: #eee;
+    line-height: 24px;
   }
 
   .main-question {
     font-size: 22px;
     letter-spacing: 3;
     color: #fff;
+  }
+
+  .main-content,
+.result-content {
+    position: relative;
+    text-align: center;
+    margin-top: 300px;
+    max-width: 70%;
+    float: none;
   }
 }/*# sourceMappingURL=App.css.map */

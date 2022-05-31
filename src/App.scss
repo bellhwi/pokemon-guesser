@@ -14,14 +14,14 @@ $color-content: #eee;
   filter: brightness($brightness);
 }
 
-@mixin content-image($url, $size) {
+@mixin content-image($url, $size, $margin-top) {
   background: url($url) center/cover no-repeat;
   width: $size;
   height: $size;
-  position: absolute;
-  left: 25%;
-  top: 40%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  float: left;
+  margin-top: $margin-top;
+  margin-right: 26px;
 }
 
 @mixin title($font-size, $letter-spacing) {
@@ -30,12 +30,12 @@ $color-content: #eee;
   color: #fff;
 }
 
-@mixin content($left) {
-  position: absolute;
-  left: $left;
-  top: 40%;
-  transform: translate(-50%, -50%);
+@mixin content($margin-top, $max-width, $float) {
+  position: relative;
   text-align: center;
+  margin-top: $margin-top;
+  max-width: $max-width;
+  float: $float;
 }
 
 * {
@@ -101,13 +101,15 @@ a {
 
 .container {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .home-content,
 .notfound-content {
-  @include content(50%);
+  position: relative;
+  text-align: center;
+  margin-top: 200px;
 }
 
 .home-bg {
@@ -123,7 +125,7 @@ a {
 .notfound-subtitle {
   font-size: 20px;
   color: $color-content;
-  margin: 40px 0 100px;
+  margin: 40px 0 120px;
   line-height: 28px;
 }
 
@@ -135,7 +137,7 @@ a {
   @include bg-image('../public/bg_alt.webp', 30%);
 }
 .main-content {
-  @include content(65%);
+  @include content(200px, 60%, left);
 }
 
 .main-question {
@@ -147,7 +149,7 @@ a {
 }
 
 .main-img {
-  @include content-image('../public/psyduck.webp', 300px);
+  @include content-image('../public/psyduck.webp', 250px, 200px);
 }
 
 .main-pager {
@@ -180,12 +182,12 @@ a {
 }
 
 .result-img {
-  @include content-image('../public/pikachu.webp', 250px);
+  @include content-image('../public/pikachu.webp', 250px, 250px);
   filter: brightness(90%);
 }
 
 .result-content {
-  @include content(65%);
+  @include content(200px, 65%, none);
 }
 
 .result-title {
@@ -232,7 +234,7 @@ a {
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
@@ -265,17 +267,19 @@ a {
     display: none;
   }
 
-  .home-title,
-  .notfound-title {
-    @include title(42px, 3);
-  }
-
-  .main-content,
-  .result-content {
-    @include content(50%);
+  .home-subtitle,
+  .notfound-subtitle {
+    font-size: 16px;
+    color: $color-content;
+    line-height: 24px;
   }
 
   .main-question {
     @include title(22px, 3);
+  }
+
+  .main-content,
+  .result-content {
+    @include content(300px, 70%, none);
   }
 }
