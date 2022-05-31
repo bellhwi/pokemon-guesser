@@ -5,6 +5,7 @@ $color-highlight: #ffc300;
 $color-content: #eee;
 
 @mixin bg-image($url, $brightness) {
+  display: block;
   background: url($url) center/cover no-repeat;
   position: fixed;
   left: 0;
