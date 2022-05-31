@@ -120,7 +120,7 @@ a {
 }
 
 .home-bg {
-  @include bg-image('../public/bg.webp', 40%);
+  @include bg-image('../public/bg.webp', 30%);
 }
 
 .home-title,
@@ -281,19 +281,19 @@ a {
     @include title(24px, 3);
   }
 
-  .home-subtitle {
-    @include subtitle(16px, 24px, 40px, 40px);
-  }
-
+  .home-subtitle,
   .notfound-subtitle {
-    @include subtitle(14px, 22px, 40px, 20px);
+    @include subtitle(16px, 24px, 40px, 40px);
   }
 
   .main-question {
     @include title(22px, 3);
   }
 
-  .main-content,
+  .main-content {
+    @include content(72px, 70%, none);
+  }
+
   .result-content,
   .notfound-content {
     @include content(48px, 70%, none);

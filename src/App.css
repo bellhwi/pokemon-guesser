@@ -83,7 +83,7 @@ a {
   top: 0;
   right: 0;
   bottom: 0;
-  filter: brightness(40%);
+  filter: brightness(30%);
 }
 
 .home-title,
@@ -299,20 +299,13 @@ a {
     color: #fff;
   }
 
-  .home-subtitle {
+  .home-subtitle,
+.notfound-subtitle {
     font-size: 16px;
     color: #eee;
     margin-top: 40px;
     margin-bottom: 40px;
     line-height: 24px;
-  }
-
-  .notfound-subtitle {
-    font-size: 14px;
-    color: #eee;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    line-height: 22px;
   }
 
   .main-question {
@@ -321,8 +314,15 @@ a {
     color: #fff;
   }
 
-  .main-content,
-.result-content,
+  .main-content {
+    position: relative;
+    text-align: center;
+    margin-top: 72px;
+    max-width: 70%;
+    float: none;
+  }
+
+  .result-content,
 .notfound-content {
     position: relative;
     text-align: center;
