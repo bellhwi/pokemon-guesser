@@ -30,6 +30,13 @@ $color-content: #eee;
   color: #fff;
 }
 
+@mixin subtitle($font-size, $line-height) {
+  font-size: $font-size;
+  color: $color-content;
+  margin: 40px 0 120px;
+  line-height: $line-height;
+}
+
 @mixin content($margin-top, $max-width, $float) {
   position: relative;
   text-align: center;
@@ -106,10 +113,9 @@ a {
 }
 
 .home-content,
-.notfound-content {
-  position: relative;
-  text-align: center;
-  margin-top: 200px;
+.notfound-content,
+.result-content {
+  @include content(200px, 70%, none);
 }
 
 .home-bg {
@@ -123,10 +129,7 @@ a {
 
 .home-subtitle,
 .notfound-subtitle {
-  font-size: 20px;
-  color: $color-content;
-  margin: 40px 0 120px;
-  line-height: 28px;
+  @include subtitle(20px, 28px);
 }
 
 .home-number {
@@ -136,8 +139,9 @@ a {
 .main-bg {
   @include bg-image('../public/bg_alt.webp', 30%);
 }
+
 .main-content {
-  @include content(200px, 60%, left);
+  @include content(200px, 50%, left);
 }
 
 .main-question {
@@ -184,10 +188,6 @@ a {
 .result-img {
   @include content-image('../public/pikachu.webp', 250px, 250px);
   filter: brightness(90%);
-}
-
-.result-content {
-  @include content(200px, 65%, none);
 }
 
 .result-title {
@@ -269,17 +269,17 @@ a {
 
   .home-subtitle,
   .notfound-subtitle {
-    font-size: 16px;
-    color: $color-content;
-    line-height: 24px;
+    @include subtitle(16px, 24px);
   }
 
   .main-question {
     @include title(22px, 3);
   }
 
+  .home-content,
   .main-content,
-  .result-content {
-    @include content(300px, 70%, none);
+  .result-content,
+  .notfound-content {
+    @include content(52px, 70%, none);
   }
 }

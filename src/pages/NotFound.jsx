@@ -7,8 +7,8 @@ function NotFound() {
       <div className='notfound-content'>
         <h1 className='notfound-title'>Not Found...</h1>
         <p className='notfound-subtitle'>
-          Sorry, we couldn't find your pokemon. Please check your information
-          correct and try again.
+          Sorry, we couldn't find your pokemon. <br></br>Please check your
+          information correct and try again.
         </p>
 
         <button type='button' className='btn'>
