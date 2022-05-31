@@ -48,6 +48,18 @@ const pokemonLetter = createSlice({
 
 export const { setPokemonLetter } = pokemonLetter.actions
 
+const pokemonDuplicates = createSlice({
+  name: 'pokemonDuplicates',
+  initialState: [],
+  reducers: {
+    setPokemonDuplicates(state, action) {
+      return action.payload
+    },
+  },
+})
+
+export const { setPokemonDuplicates } = pokemonDuplicates.actions
+
 const result = createSlice({
   name: 'result',
   initialState: {},
@@ -66,6 +78,7 @@ export default configureStore({
     pokemonType: pokemonType.reducer,
     pokemonShape: pokemonShape.reducer,
     pokemonLetter: pokemonLetter.reducer,
+    pokemonDuplicates: pokemonDuplicates.reducer,
     result: result.reducer,
   },
 })

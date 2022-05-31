@@ -22,7 +22,10 @@ function Type({ question, setQuestionCount, toPascalCase }) {
             setIsDefault(false)
 
             axios.get('https://pokeapi.co/api/v2/pokemon-shape').then((res) => {
-              dispatch(setPokemonShape(res.data.results))
+              let data = res.data.results
+              data.push({ name: 'Not sure', id: 'idk-shape' })
+              dispatch(setPokemonShape(data))
+              console.log(data)
             })
           }}
         >
@@ -39,7 +42,7 @@ function Type({ question, setQuestionCount, toPascalCase }) {
         </select>
       </div>
       <div className={`alert ${alertOn}`}>
-        <small>! Select a type</small>
+        <small>! Please select a type</small>
       </div>
 
       <div className='main-pager'>
@@ -62,7 +65,7 @@ function Type({ question, setQuestionCount, toPascalCase }) {
                 })
                 dispatch(setPokemonType(pkmNameArr))
               })
-            setQuestionCount((prev) => prev + 1)
+              .then(() => setQuestionCount((prev) => prev + 1))
           }}
         >
           Next &gt;

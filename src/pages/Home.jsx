@@ -13,15 +13,17 @@ function Home() {
           <span className='home-number'> 1100+ Pokemon</span>,<br></br>
           we'll guess what it is!
         </p>
-        <button
-          type='button'
-          className='btn'
-          onClick={() => {
-            navigate('/main')
-          }}
-        >
-          START
-        </button>
+        <a>
+          <button
+            type='button'
+            className='btn'
+            onClick={() => {
+              navigate('/main')
+            }}
+          >
+            START
+          </button>
+        </a>
       </div>
       <Footer />
     </div>

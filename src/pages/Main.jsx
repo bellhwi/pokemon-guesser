@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { setPokemonDuplicates } from '../store'
+import { useDispatch } from 'react-redux'
 import Color from '../components/Color'
 import Type from '../components/Type'
 import Shape from '../components/Shape'
@@ -9,6 +11,7 @@ import Footer from '../components/Footer'
 
 function Main() {
   const [questionCount, setQuestionCount] = useState(0)
+  const dispatch = useDispatch()
   const questions = [
     { type: 'color', title: 'What is the closest color of your pokemon?' },
     {
@@ -39,10 +42,12 @@ function Main() {
       question={questions[2].title}
       setQuestionCount={setQuestionCount}
       toPascalCase={toPascalCase}
+      setDuplicateElements={setDuplicateElements}
     />,
     <Letter
       question={questions[3].title}
       setQuestionCount={setQuestionCount}
+      setDuplicateElements={setDuplicateElements}
     />,
     <FirstCharacter setQuestionCount={setQuestionCount} />,
     <LastCharacter />,
@@ -52,6 +57,18 @@ function Main() {
     return (' ' + str).toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => {
       return chr.toUpperCase()
     })
+  }
+
+  async function setDuplicateElements(mergedPokemonArr) {
+    const pokemon = new Promise((res) => {
+      const findDuplicates = (arr) =>
+        arr.filter((item, index) => arr.indexOf(item) !== index)
+
+      res(findDuplicates(mergedPokemonArr))
+    })
+
+    const result = await pokemon
+    dispatch(setPokemonDuplicates(result))
   }
 
   return (

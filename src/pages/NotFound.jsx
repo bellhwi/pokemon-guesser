@@ -11,9 +11,11 @@ function NotFound() {
           information correct and try again.
         </p>
 
-        <button type='button' className='btn'>
-          <a href='/main'>Try Again</a>
-        </button>
+        <a href='/main'>
+          <button type='button' className='btn'>
+            Try Again
+          </button>
+        </a>
       </div>
       <Footer />
     </div>

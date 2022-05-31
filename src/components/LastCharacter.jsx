@@ -67,7 +67,7 @@ function LastCharacter() {
         </div>
       </div>
       <div className={`alert ${alertOn}`}>
-        <small>! Select an answer</small>
+        <small>! Please select an answer</small>
       </div>
       <div className='main-pager'>
         <span

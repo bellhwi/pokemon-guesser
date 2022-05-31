@@ -41,7 +41,7 @@ function Color({ question, setQuestionCount, toPascalCase }) {
         </select>
       </div>
       <div className={`alert ${alertOn}`}>
-        <small>! Select a color</small>
+        <small>! Please select a color</small>
       </div>
 
       <div className='main-pager'>

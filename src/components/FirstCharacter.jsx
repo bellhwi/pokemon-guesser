@@ -10,6 +10,7 @@ function FirstCharacter({ setQuestionCount }) {
   const dispatch = useDispatch()
   const [alertOn, setAlertOn] = useState('')
   const [isDefault, setIsDefault] = useState(true)
+  const [searchedPokemonArr, setSearchedPokemonArr] = useState([])
   const firstCharacterArr = state.pokemonLetter.map((name) => {
     return name[0]
   })
@@ -44,23 +45,8 @@ function FirstCharacter({ setQuestionCount }) {
               })
               firstLetterMatchedArr = new Set(firstLetterMatchedArr)
               firstLetterMatchedArr = Array.from(firstLetterMatchedArr)
-              dispatch(setPokemonLetter(firstLetterMatchedArr))
 
-              if (firstLetterMatchedArr.length == 1) {
-                axios
-                  .get(
-                    `https://pokeapi.co/api/v2/pokemon/${firstLetterMatchedArr[0]}`
-                  )
-                  .then((res) => {
-                    const data = res.data
-                    const searchedPokemon = {
-                      name: data.name,
-                      spriteURL: data.sprites.front_default,
-                    }
-
-                    dispatch(setResult(searchedPokemon))
-                  })
-              }
+              setSearchedPokemonArr(firstLetterMatchedArr)
             }}
           />
           <label htmlFor='yes'> Yes</label>
@@ -80,7 +66,7 @@ function FirstCharacter({ setQuestionCount }) {
         </div>
       </div>
       <div className={`alert ${alertOn}`}>
-        <small>! Select an answer</small>
+        <small>! Please select an answer</small>
       </div>
       <div className='main-pager'>
         <span
@@ -92,9 +78,24 @@ function FirstCharacter({ setQuestionCount }) {
               }, 2000)
             } else {
               if (radioYes) {
-                state.pokemonLetter.length == 1
-                  ? navigate('/result')
-                  : setQuestionCount((prev) => prev + 1)
+                if (searchedPokemonArr.length == 1) {
+                  axios
+                    .get(
+                      `https://pokeapi.co/api/v2/pokemon/${searchedPokemonArr[0]}`
+                    )
+                    .then((res) => {
+                      const data = res.data
+                      const searchedPokemon = {
+                        name: data.name,
+                        spriteURL: data.sprites.front_default,
+                      }
+
+                      dispatch(setResult(searchedPokemon))
+                    })
+                    .then(() => navigate('/result'))
+                } else {
+                  setQuestionCount((prev) => prev + 1)
+                }
               } else {
                 state.pokemonLetter.length <= firstCharacterIndex + 1
                   ? navigate('/notfound')

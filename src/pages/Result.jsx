@@ -14,9 +14,11 @@ function Result() {
           <img className='result-pokemon' src={result.spriteURL} />
           <p className='result-name'>{result.name.toUpperCase()}</p>
         </div>
-        <button type='button' className='btn'>
-          <a href='/'>Back To Home</a>
-        </button>
+        <a href='/'>
+          <button type='button' className='btn'>
+            Back To Home
+          </button>
+        </a>
       </div>
       <Footer />
     </div>

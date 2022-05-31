@@ -2,16 +2,20 @@ import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { setPokemonLetter, setResult } from '../store'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-function Letter({ question, setQuestionCount }) {
+function Letter({ question, setQuestionCount, setDuplicateElements }) {
   const state = useSelector((state) => state)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [alertOn, setAlertOn] = useState('')
   const [isDefault, setIsDefault] = useState(true)
-  let letterMatchedArr = []
 
+  useEffect(() => {
+    if (state.pokemonShape.length == 0) return
+    const mergedPokemonArr = [...state.pokemonDuplicates, ...state.pokemonShape]
+    setDuplicateElements(mergedPokemonArr)
+  }, [])
   return (
     <>
       <h4 className='main-question'>{question}</h4>
@@ -28,30 +32,16 @@ function Letter({ question, setQuestionCount }) {
               setTimeout(() => {
                 setAlertOn('')
               }, 2000)
-              return
-            }
+            } else {
+              setIsDefault(false)
 
-            setIsDefault(false)
-            async function getDuplicateElements() {
-              const pokemon = new Promise((res) =>
-                res([
-                  ...state.pokemonColor,
-                  ...state.pokemonType,
-                  ...state.pokemonShape,
-                ])
-              )
-              const findDuplicates = (arr) =>
-                arr.filter((item, index) => arr.indexOf(item) !== index)
-
-              const result = await pokemon
-              const duplicatesArr = findDuplicates(result)
-              let letterLength = e.target.value
-
-              duplicatesArr.forEach((pkm) => {
-                if (pkm.length == letterLength) {
+              let letterMatchedArr = []
+              state.pokemonDuplicates.forEach((pkm) => {
+                if (pkm.length == e.target.value) {
                   letterMatchedArr.push(pkm)
                 }
               })
+
               dispatch(setPokemonLetter(letterMatchedArr))
 
               if (letterMatchedArr.length == 1) {
@@ -70,8 +60,6 @@ function Letter({ question, setQuestionCount }) {
                   })
               }
             }
-
-            getDuplicateElements()
           }}
         />
       </div>

@@ -76,17 +76,7 @@ input[type='radio'] {
 a {
   text-decoration: none;
   color: #fff;
-}
-
-.alert {
-  display: none;
-  color: $color-highlight;
-  text-align: left;
-  padding-left: 8px;
-}
-
-.alert.alert-on {
-  display: block;
+  display: inline-block;
 }
 
 .btn {
@@ -106,6 +96,17 @@ a {
 
 .btn:active {
   background-color: #eeba0b;
+}
+
+.alert {
+  display: none;
+  color: $color-highlight;
+  text-align: left;
+  padding-left: 8px;
+}
+
+.alert.alert-on {
+  display: block;
 }
 
 .container {
@@ -202,6 +203,7 @@ a {
 
 .result-pokemon {
   width: 100%;
+  margin: 24px 0;
 }
 
 .result-name {
