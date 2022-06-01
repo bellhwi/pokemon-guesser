@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { setPokemonLetter, setResult } from '../store'
+import { setResult } from '../store'
 
 function FirstCharacter({ setQuestionCount }) {
   const state = useSelector((state) => state)

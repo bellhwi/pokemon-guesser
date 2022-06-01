@@ -64,7 +64,7 @@ function Letter({ question, setQuestionCount, setDuplicateElements }) {
         />
       </div>
       <div className={`alert ${alertOn}`}>
-        <small>! Type a number</small>
+        <small>! Please type a number</small>
       </div>
       <div className='main-pager'>
         <span

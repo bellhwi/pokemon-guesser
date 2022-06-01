@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { setPokemonShape, setPokemonDuplicates } from '../store'
+import { setPokemonShape } from '../store'
 import axios from 'axios'
 
 function Shape({

@@ -52,19 +52,19 @@ function Color({ question, setQuestionCount, toPascalCase }) {
               setTimeout(() => {
                 setAlertOn('')
               }, 2000)
-              return
-            }
-            axios
-              .get(`https://pokeapi.co/api/v2/pokemon-color/${selectedColor}`)
-              .then((res) => {
-                const data = res.data.pokemon_species
-                let pkmNameArr = []
-                data.forEach((pkm) => {
-                  pkmNameArr.push(pkm.name)
+            } else {
+              axios
+                .get(`https://pokeapi.co/api/v2/pokemon-color/${selectedColor}`)
+                .then((res) => {
+                  const data = res.data.pokemon_species
+                  let pkmNameArr = []
+                  data.forEach((pkm) => {
+                    pkmNameArr.push(pkm.name)
+                  })
+                  dispatch(setPokemonColor(pkmNameArr))
                 })
-                dispatch(setPokemonColor(pkmNameArr))
-              })
-            setQuestionCount((prev) => prev + 1)
+                .then(() => setQuestionCount((prev) => prev + 1))
+            }
           }}
         >
           Next &gt;
