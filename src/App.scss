@@ -127,7 +127,7 @@ a {
 
 .home-title,
 .notfound-title {
-  @include title(60px, 3);
+  @include title(60px, 3px);
 }
 
 .home-subtitle,
@@ -148,7 +148,7 @@ a {
 }
 
 .main-question {
-  @include title(28px, 3);
+  @include title(28px, 3px);
 }
 
 .main-answer {
@@ -194,7 +194,7 @@ a {
 }
 
 .result-title {
-  @include title(28px, 3);
+  @include title(28px, 3px);
 }
 
 .result-answer {
@@ -277,11 +277,11 @@ a {
 
   .home-title,
   .notfound-title {
-    @include title(54px, 3);
+    @include title(54px, 3px);
   }
 
   .result-title {
-    @include title(24px, 3);
+    @include title(24px, 3px);
   }
 
   .home-subtitle,
@@ -290,7 +290,7 @@ a {
   }
 
   .main-question {
-    @include title(22px, 3);
+    @include title(22px, 2px);
   }
 
   .main-content {
@@ -300,5 +300,18 @@ a {
   .result-content,
   .notfound-content {
     @include content(48px, 70%, none);
+  }
+
+  .result-title {
+    @include title(24px, 3px);
+  }
+
+  .result-pokemon {
+    width: 80%;
+    margin: 8px 0;
+  }
+
+  .result-name {
+    margin-bottom: 8px;
   }
 }

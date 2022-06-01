@@ -91,7 +91,7 @@ a {
 .home-title,
 .notfound-title {
   font-size: 60px;
-  letter-spacing: 3;
+  letter-spacing: 3px;
   color: #fff;
 }
 
@@ -129,7 +129,7 @@ a {
 
 .main-question {
   font-size: 28px;
-  letter-spacing: 3;
+  letter-spacing: 3px;
   color: #fff;
 }
 
@@ -197,7 +197,7 @@ a {
 
 .result-title {
   font-size: 28px;
-  letter-spacing: 3;
+  letter-spacing: 3px;
   color: #fff;
 }
 
@@ -295,13 +295,13 @@ a {
   .home-title,
 .notfound-title {
     font-size: 54px;
-    letter-spacing: 3;
+    letter-spacing: 3px;
     color: #fff;
   }
 
   .result-title {
     font-size: 24px;
-    letter-spacing: 3;
+    letter-spacing: 3px;
     color: #fff;
   }
 
@@ -316,7 +316,7 @@ a {
 
   .main-question {
     font-size: 22px;
-    letter-spacing: 3;
+    letter-spacing: 2px;
     color: #fff;
   }
 
@@ -335,5 +335,20 @@ a {
     margin-top: 48px;
     max-width: 70%;
     float: none;
+  }
+
+  .result-title {
+    font-size: 24px;
+    letter-spacing: 3px;
+    color: #fff;
+  }
+
+  .result-pokemon {
+    width: 80%;
+    margin: 8px 0;
+  }
+
+  .result-name {
+    margin-bottom: 8px;
   }
 }/*# sourceMappingURL=App.css.map */
