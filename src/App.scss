@@ -116,9 +116,12 @@ a {
 }
 
 .home-content,
-.notfound-content,
-.result-content {
+.notfound-content {
   @include content(200px, 70%, none);
+}
+
+.result-content {
+  @include content(100px, 70%, none);
 }
 
 .home-bg {
@@ -189,7 +192,7 @@ a {
 }
 
 .result-img {
-  @include content-image('../public/pikachu.webp', 250px, 250px);
+  @include content-image('../public/pikachu.webp', 250px, 150px);
   filter: brightness(90%);
 }
 

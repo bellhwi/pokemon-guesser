@@ -68,11 +68,18 @@ a {
 }
 
 .home-content,
-.notfound-content,
-.result-content {
+.notfound-content {
   position: relative;
   text-align: center;
   margin-top: 200px;
+  max-width: 70%;
+  float: none;
+}
+
+.result-content {
+  position: relative;
+  text-align: center;
+  margin-top: 100px;
   max-width: 70%;
   float: none;
 }
@@ -190,7 +197,7 @@ a {
   height: 250px;
   position: relative;
   float: left;
-  margin-top: 250px;
+  margin-top: 150px;
   margin-right: 26px;
   filter: brightness(90%);
 }
