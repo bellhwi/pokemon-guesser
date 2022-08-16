@@ -1,4 +1,4 @@
-import { FaGithub, FaItchIo, FaLinkedinIn } from 'react-icons/fa'
+import { FaGithub, FaItchIo, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
 
 function Footer() {
   const date = new Date()
@@ -6,6 +6,13 @@ function Footer() {
   return (
     <div className='footer'>
       <div className='sns'>
+        <a
+          href='https://www.youtube.com/channel/UCMDLPQ99Hp5o-ri25xYd0mA'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <FaYoutube />
+        </a>
         <a href='https://github.com/bellhwi' target='_blank' rel='noreferrer'>
           <FaGithub />
         </a>
@@ -20,7 +27,7 @@ function Footer() {
           <FaLinkedinIn />
         </a>
       </div>
-      <small>&copy; {year} bellhwi. All rights reserved. </small>
+      <small>&copy; {year} Jonghwi Kim. All rights reserved. </small>
     </div>
   )
 }
