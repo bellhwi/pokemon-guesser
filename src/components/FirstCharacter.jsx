@@ -77,6 +77,7 @@ function FirstCharacter({ setQuestionCount }) {
                 setAlertOn('')
               }, 2000)
             } else {
+              // Different question algorithm by answer
               if (radioYes) {
                 if (searchedPokemonArr.length == 1) {
                   axios

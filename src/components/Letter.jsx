@@ -26,6 +26,7 @@ function Letter({ question, setQuestionCount, setDuplicateElements }) {
           placeholder='Type a number of characters'
           className='letter-input'
           onChange={(e) => {
+            // User selection filter
             if (isNaN(e.target.value) || e.target.value.trim().length == 0) {
               setIsDefault(true)
               setAlertOn('alert-on')

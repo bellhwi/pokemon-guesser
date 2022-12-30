@@ -21,6 +21,7 @@ function Color({ question, setQuestionCount, toPascalCase }) {
             setSelectedColor(e.target.value)
             setIsDefault(false)
 
+            // Fetch API for the next question
             axios.get('https://pokeapi.co/api/v2/type').then((res) => {
               let data = res.data.results
               data.splice(18, 2)
@@ -53,6 +54,7 @@ function Color({ question, setQuestionCount, toPascalCase }) {
                 setAlertOn('')
               }, 2000)
             } else {
+              // Fetch API based on user selection
               axios
                 .get(`https://pokeapi.co/api/v2/pokemon-color/${selectedColor}`)
                 .then((res) => {

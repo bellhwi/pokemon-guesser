@@ -25,7 +25,6 @@ function Type({ question, setQuestionCount, toPascalCase }) {
               let data = res.data.results
               data.push({ name: 'Not sure', id: 'idk-shape' })
               dispatch(setPokemonShape(data))
-              console.log(data)
             })
           }}
         >
