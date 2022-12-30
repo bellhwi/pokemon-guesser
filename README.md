@@ -30,6 +30,7 @@
 - 🎯 User selection filter: [Example code](https://github.com/bellhwi/pokemon-guesser/blob/main/src/components/Letter.jsx)
 - 🕹️ [PokeAPI](https://pokeapi.co/) project
 - 🚫 Not found page
+- 📱 Responsive design
 
 ## Tech
 
