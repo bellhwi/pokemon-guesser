@@ -20,14 +20,14 @@
 
 ## Technical Decision
 
-- I separated two different fetch API logic to ‘onClick’ and ‘onChange’ on purpose. The ‘onChange’ is to fetch the data for the next question. The ‘onClick’ is to fetch the corresponding data based on the user’s selection. That way I could reduce the delay between page loading. [Example code](https://github.com/bellhwi/pokemon-guesser/blob/main/src/components/Color.jsx)
+- I separated two different fetch API logic to ‘onClick’ and ‘onChange’ on purpose. The ‘onChange’ is to fetch the data for the next question. The ‘onClick’ is to fetch the corresponding data based on the user’s selection. That way I could reduce the delay between page loading. [Example code](https://github.com/bellhwi/pokemon-guesser/blob/main/src/components/Color.jsx#L20-L30)
 
-- I used Sass to write the CSS code more efficiently. I could reduce repetitive code by using mixin syntax in Sass. [Example code](https://github.com/bellhwi/pokemon-guesser/blob/main/src/App.scss)
+- I used Sass to write the CSS code more efficiently. I could reduce repetitive code by using mixin syntax in Sass. [Example code](https://github.com/bellhwi/pokemon-guesser/blob/main/src/App.scss#L7-L48)
 
 ## Features
 
-- 🤖 Different question algorithm by answer: [Example code](https://github.com/bellhwi/pokemon-guesser/blob/main/src/components/FirstCharacter.jsx)
-- 🎯 User selection filter: [Example code](https://github.com/bellhwi/pokemon-guesser/blob/main/src/components/Letter.jsx)
+- 🤖 Different question algorithm by answer: [Example code](https://github.com/bellhwi/pokemon-guesser/blob/main/src/components/FirstCharacter.jsx#L80-L105)
+- 🎯 User selection filter: [Example code](https://github.com/bellhwi/pokemon-guesser/blob/main/src/components/Letter.jsx#L29-L43)
 - 🕹️ [PokeAPI](https://pokeapi.co/) project
 - 🚫 Not found page
 - 📱 Responsive design
